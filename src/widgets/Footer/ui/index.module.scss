@@ -1,0 +1,19 @@
+.hr {
+  margin-top: 85px;
+  border: 1px solid rgba(255, 70, 70, 1);
+}
+.title {
+  font-weight: 400;
+  font-size: 14px;
+  margin-top: 26px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 37px;
+  .part1 {
+    color: rgba(217, 217, 217, 0.2);
+  }
+  .part2 {
+    color: rgba(217, 217, 217, 1);
+  }
+}

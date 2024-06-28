@@ -1,0 +1,38 @@
+.dungeon {
+  width: 543px;
+  height: 141px;
+  margin-top: 41px;
+  border-radius: 3px;
+
+  .title {
+    font-size: 32px;
+    color: 
+rgba(255, 70, 70, 1);
+font-weight: 
+700;
+margin-top: 14px;
+margin-left: 15px;
+  }
+  .desc {
+    width: 543px;
+    height: 38px;
+    border-radius: 4px;
+    background-color: rgba(255, 70, 70, 0.4);
+    cursor: pointer;
+    .text {
+      position: absolute;
+      right: 32px;
+      bottom: 10px;
+      font-size: 16px;
+      font-weight: 500;
+      img {
+        position: absolute;
+        right: 12;
+        bottom: 0px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+      }
+    }
+  }
+}
