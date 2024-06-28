@@ -3,6 +3,7 @@
 import useStore from "@/features/store";
 import s from "./index.module.scss";
 import { useShallow } from "zustand/react/shallow";
+import { useEffect } from "react";
 
 export type props = {
   bgc: string;
@@ -15,10 +16,6 @@ export type props = {
 };
 
 export default ({ bgc, radius, w, h, onClick, children, weight }: props) => {
-
-  const { plusLimit } = useStore(useShallow((state: any) => ({
-    plusLimit: state.plusLimit,
-  })))
 
   return (
     <button

@@ -12,25 +12,29 @@ import useStore from "@/features/store";
 export default () => {
   const [data, setData] = useState<DungeonType[]>([]);
 
-  const { limit } = useStore(
-    useShallow((state: any) => ({ limit: state.limit }))
+  const { mainUrl, limit, search } = useStore(
+    useShallow((state: any) => ({
+      mainUrl: state.mainUrl,
+      limit: state.limit,
+      search: state.search,
+    }))
   );
 
   useEffect(() => {
     const fetchData = async () => {
-      axios
-        .get(`http://localhost:8000/Dungeons?_limit=${limit}`)
-        .then((res) => setData(res.data));
+      axios.get(mainUrl).then((res) => setData(res.data));
     };
 
     fetchData();
-  }, [limit]);
+  }, [limit, search]);
 
   return (
     <div className={s.container}>
-        {data.map((item: DungeonType) => (
-          <Dungeon key={item.id} {...item} />
-        ))}
+      {search !== ""
+        ? data.map((item: DungeonType) => <Dungeon key={item.id} {...item} />)
+        : data
+            .filter((_, index) => index < limit)
+            .map((item: DungeonType) => <Dungeon key={item.id} {...item} />)}
     </div>
   );
 };
