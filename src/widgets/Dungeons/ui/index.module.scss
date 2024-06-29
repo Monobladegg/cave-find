@@ -1,4 +1,18 @@
 .container {
   margin-top: 3px;
   margin-bottom: 44px;
+
+  .notFound {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    .text {
+      font-weight: 700;
+      font-size: 24px;
+      color: rgba(102, 101, 101, 1);
+      margin-top: 45px;
+    }
+  }
 }

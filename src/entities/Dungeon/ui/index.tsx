@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 
 import s from "./index.module.scss";
 import Link from "next/link";
+import ComplexityDisplay from "@/widgets/ComplexityDisplay/ui";
 
 export default ({
   id,
@@ -56,14 +57,9 @@ export default ({
           opacity: 1,
         }}
       >
-        {[...new Array(complexity)].map((_, i) => (
-          <img key={i} src="./orangeCom.svg" style={{ marginRight: "10px" }} />
-        ))}
-        {[...new Array(5 - complexity)].map((_, i) => (
-          <img key={i} src="./whiteCom.svg" style={{ marginRight: "10px" }} />
-        ))}
+        <ComplexityDisplay complexity={complexity} />
       </div>
-      <Link href={`/dungeon/${id}`}>
+      <Link href={`/dungeon/${id-1}`}>
         <div
           className={s.desc}
           style={{ position: "absolute", bottom: 0, zIndex: 1, opacity: 1 }}

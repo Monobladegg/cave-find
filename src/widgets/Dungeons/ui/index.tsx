@@ -9,8 +9,13 @@ import s from "./index.module.scss";
 import { useShallow } from "zustand/react/shallow";
 import useStore from "@/features/store";
 
+import NotFoundIcon from "@/entities/notFoundIcon/ui";
+import Button from "@/entities/Button/ui";
+import { plusLimit } from "@/features/events";
+
 export default () => {
   const [data, setData] = useState<DungeonType[]>([]);
+  const [error, setError] = useState<string | null>(null);
 
   const { mainUrl, limit, search } = useStore(
     useShallow((state: any) => ({
@@ -22,7 +27,17 @@ export default () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      axios.get(mainUrl).then((res) => setData(res.data));
+      try {
+        const res = await axios.get(mainUrl);
+        setData(res.data);
+        setError(null);
+      } catch (err: any) {
+        if (err.response && err.response.status === 404) {
+          setError("Пусто");
+        } else {
+          setError("Произошла ошибка");
+        }
+      }
     };
 
     fetchData();
@@ -30,11 +45,30 @@ export default () => {
 
   return (
     <div className={s.container}>
-      {search !== ""
-        ? data.map((item: DungeonType) => <Dungeon key={item.id} {...item} />)
-        : data
-            .filter((_, index) => index < limit)
-            .map((item: DungeonType) => <Dungeon key={item.id} {...item} />)}
+      {error ? (
+        <div className={s.notFound}>
+          <NotFoundIcon />
+          <p className={s.text}>К сожелению, такого подземелья нет</p>
+        </div>
+      ) : (
+        data
+          .filter((_, index) => index < limit)
+          .map((item: DungeonType) => <Dungeon key={item.id} {...item} />)
+      )}
+      {!error && (
+        <div style={{marginTop: "44px"}}>
+          <Button
+            bgc="rgba(255, 70, 70, 1)"
+            radius="4"
+            w="543"
+            h="52"
+            weight="700"
+            onClick={plusLimit}
+          >
+            Показать больше
+          </Button>
+        </div>
+      )}
     </div>
   );
 };

@@ -1,0 +1,42 @@
+.container {
+
+  margin-top: 85px;
+
+  .progressBar {
+    width: 543px;
+    height: 4px;
+    border-radius: 4px;
+    margin-bottom: 47px;
+    margin-top: 4px;
+
+    &::-webkit-progress-value {
+      background-color: rgba(255, 70, 70, 1);
+    }
+  }
+
+  .flex {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+
+    .text {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .value {
+      font-size: 20;
+      font-weight: 400;
+      margin-top: 6px;
+    }
+  }
+
+  .title {
+    color: rgba(255, 70, 70, 1);
+    font-size: 32px;
+    margin-bottom: 30px;
+    margin-top: 16px;
+  }
+
+}
