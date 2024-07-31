@@ -16,13 +16,13 @@ export type Props = {
 };
 
 export default function Dungeon({ params }: Props) {
-  const [data, setData] = useState<DungeonType>({} as DungeonType);
+  const [data, setData] = useState<DungeonType[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const res = await axios.get(
-          "https://66757d09a8d2b4d072f03c50.mockapi.io/Dungeons?id=" + params.id
+          "https://66757d09a8d2b4d072f03c50.mockapi.io/Dungeons?id=" + (Number(params.id) + 1)
         );
         setData(res.data);
       } catch (error) {
@@ -33,7 +33,7 @@ export default function Dungeon({ params }: Props) {
     fetchData();
   }, [params.id]);
 
-  const { title, complexity, averageTime, reward, price, img } = data;
+  const { title, complexity, averageTime, reward, price, img } = data[0];
   const validComplexity =
     typeof complexity === "number" && complexity >= 0 && complexity <= 5
       ? complexity
