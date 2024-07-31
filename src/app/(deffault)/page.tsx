@@ -6,8 +6,8 @@ import { Metadata } from "next";
 import s from "./page.module.scss";
 
 export const metadata: Metadata = {
-  title: "Подземелья",
-  description: `Главная страница`,
+  title: "Подземелья из Genshin Impact",
+  description: `Проект был разработан Frontend разработчиком - Monoblade`,
 };
 
 export default function Home() {
