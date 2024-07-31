@@ -1,7 +1,7 @@
 "use client";
 
 import { Dungeon as DungeonType } from "@/shared/types";
-import Dungeon from "@/entities/Dungeon/ui";
+import DungeonComponent from "@/entities/Dungeon/ui";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
@@ -13,7 +13,7 @@ import NotFoundIcon from "@/entities/notFoundIcon/ui";
 import Button from "@/entities/Button/ui";
 import { plusLimit } from "@/features/events";
 
-export default () => {
+const Dungeons = () => {
   const [data, setData] = useState<DungeonType[]>([]);
   const [error, setError] = useState<string | null>(null);
 
@@ -53,7 +53,7 @@ export default () => {
       ) : (
         data
           .filter((_, index) => index < limit)
-          .map((item: DungeonType) => <Dungeon key={item.id} {...item} />)
+          .map((item: DungeonType) => <DungeonComponent key={item.id} {...item} />)
       )}
       {!error && (
         <div style={{ marginTop: "44px" }}>
@@ -72,3 +72,5 @@ export default () => {
     </div>
   );
 };
+
+export default Dungeons;

@@ -2,7 +2,7 @@ import s from "./not-found.module.scss";
 import NotFoundIcon from "../entities/notFoundIcon/ui";
 import Link from "next/link";
 
-export default () => {
+const NotFound = () => {
   return (
     <>
     <div className={s.container} />
@@ -18,3 +18,5 @@ export default () => {
     </>
   );
 };
+
+export default NotFound;

@@ -1,9 +1,6 @@
 "use client";
 
-import useStore from "@/features/store";
 import s from "./index.module.scss";
-import { useShallow } from "zustand/react/shallow";
-import { useEffect } from "react";
 
 export type props = {
   bgc: string;
@@ -15,7 +12,7 @@ export type props = {
   weight: string;
 };
 
-export default ({ bgc, radius, w, h, onClick, children, weight }: props) => {
+const Button = ({ bgc, radius, w, h, onClick, children, weight }: props) => {
 
   return (
     <button
@@ -33,3 +30,5 @@ export default ({ bgc, radius, w, h, onClick, children, weight }: props) => {
     </button>
   );
 };
+
+export default Button;

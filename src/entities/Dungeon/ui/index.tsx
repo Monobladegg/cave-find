@@ -1,13 +1,12 @@
 "use client";
 
 import { Dungeon } from "@/shared/types";
-import { useEffect, useState } from "react";
 
 import s from "./index.module.scss";
 import Link from "next/link";
 import ComplexityDisplay from "@/widgets/ComplexityDisplay/ui";
 
-export default ({
+const DungeonComponent = ({
   id,
   title,
   complexity,
@@ -72,3 +71,5 @@ export default ({
     </div>
   );
 };
+
+export default DungeonComponent
