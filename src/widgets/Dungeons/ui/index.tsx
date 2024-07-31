@@ -56,7 +56,7 @@ export default () => {
           .map((item: DungeonType) => <Dungeon key={item.id} {...item} />)
       )}
       {!error && (
-        <div style={{marginTop: "44px"}}>
+        <div style={{ marginTop: "44px" }}>
           <Button
             bgc="rgba(255, 70, 70, 1)"
             radius="4"
