@@ -9,20 +9,20 @@ import ComplexityDisplay from "@/widgets/ComplexityDisplay/ui";
 import Button from "@/entities/Button/ui";
 import Link from "next/link";
 
-export type props = {
+export type Props = {
   params: {
     id: string;
   };
 };
 
-export default function Dungeon({ params }: props) {
+export default function Dungeon({ params }: Props) {
   const [data, setData] = useState<DungeonType>({} as DungeonType);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:8000/Dungeons/" + params.id
+          "https://66757d09a8d2b4d072f03c50.mockapi.io/Dungeons?id=" + params.id
         );
         setData(res.data);
       } catch (error) {
@@ -33,7 +33,7 @@ export default function Dungeon({ params }: props) {
     fetchData();
   }, [params.id]);
 
-  const { id, title, complexity, averageTime, reward, price, img } = data;
+  const { title, complexity, averageTime, reward, price, img } = data;
   const validComplexity =
     typeof complexity === "number" && complexity >= 0 && complexity <= 5
       ? complexity
