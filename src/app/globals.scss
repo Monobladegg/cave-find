@@ -19,11 +19,13 @@ body {
   background-color: rgba(44, 44, 44, 1);
   display: flex;
   justify-content: center;
+  width: 100%;
 
   main {
     display: flex;
     flex-direction: column;
     width: 543px;
     margin-top: 68px;
+    margin-right: 10px;
   }
 }
