@@ -6,16 +6,7 @@ import s from "./index.module.scss";
 import Link from "next/link";
 import ComplexityDisplay from "@/widgets/ComplexityDisplay/ui";
 
-const DungeonComponent = ({
-  id,
-  title,
-  complexity,
-  averageTime,
-  reward,
-  price,
-  img,
-}: Dungeon) => {
-
+const DungeonComponent = ({ id, title, complexity, img }: Dungeon) => {
   return (
     <div className={s.dungeon} style={{ position: "relative" }}>
       <div
@@ -56,9 +47,11 @@ const DungeonComponent = ({
           opacity: 1,
         }}
       >
-        <ComplexityDisplay complexity={complexity} />
+        <div className={s.complexityContainer}>
+          <ComplexityDisplay complexity={complexity} />
+        </div>
       </div>
-      <Link href={`/dungeon/${id-1}`}>
+      <Link href={`/dungeon/${id - 1}`}>
         <div
           className={s.desc}
           style={{ position: "absolute", bottom: 0, zIndex: 1, opacity: 1 }}
@@ -72,4 +65,4 @@ const DungeonComponent = ({
   );
 };
 
-export default DungeonComponent
+export default DungeonComponent;

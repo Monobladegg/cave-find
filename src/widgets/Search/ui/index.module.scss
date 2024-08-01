@@ -2,6 +2,8 @@
 .container {
   display: flex;
   position: relative;
+  width: 543px;
+
   .input {
     border-radius: 4px;
     border: none;
@@ -9,6 +11,7 @@
     font-size: 16px;
     color: rgba(102, 101, 101, 1);
     padding-left: 15px;
+    width: 100%;
     &::placeholder {
       color: rgba(102, 101, 101, 1);
       
@@ -20,5 +23,11 @@
     position: absolute;
     right: 15px;
     top: 10px;
+  }
+}
+
+@media screen and (max-width: 543px) {
+  .container {
+    width: 94%;
   }
 }

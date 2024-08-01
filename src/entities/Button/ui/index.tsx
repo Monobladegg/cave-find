@@ -12,7 +12,7 @@ export type props = {
   weight: string;
 };
 
-const Button = ({ bgc, radius, w, h, onClick, children, weight }: props) => {
+const Button = ({ bgc, radius, h, onClick, children, weight }: props) => {
 
   return (
     <button
@@ -21,7 +21,6 @@ const Button = ({ bgc, radius, w, h, onClick, children, weight }: props) => {
       style={{
         backgroundColor: bgc,
         borderRadius: `${radius}px`,
-        width: `${w}px`,
         height: `${h}px`,
         fontWeight: weight,
       }}

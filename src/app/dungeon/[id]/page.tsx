@@ -8,6 +8,7 @@ import Footer from "@/widgets/Footer/ui";
 import ComplexityDisplay from "@/widgets/ComplexityDisplay/ui";
 import Button from "@/entities/Button/ui";
 import Link from "next/link";
+import { Metadata } from "next";
 
 type Props = {
   params: {
@@ -48,7 +49,7 @@ export default function Dungeon({ params }: Props) {
       : 0;
 
   return (
-    <div
+    <main
       style={{
         display: "flex",
         flexDirection: "column",
@@ -58,14 +59,14 @@ export default function Dungeon({ params }: Props) {
       <div className={s.container}>
         <img
           style={{ borderRadius: "6px" }}
-          width={540}
           src={img}
           alt={title}
+          className={s.img}
         />
         <h1 className={s.title}>{title}</h1>
         <div className={s.flex}>
           <p className={s.text}>Сложность:</p>
-          <div>
+          <div className={s.complexity}>
             <ComplexityDisplay complexity={validComplexity} />
           </div>
         </div>
@@ -94,6 +95,6 @@ export default function Dungeon({ params }: Props) {
         </Button>
       </Link>
       <Footer />
-    </div>
+    </main>
   );
 }

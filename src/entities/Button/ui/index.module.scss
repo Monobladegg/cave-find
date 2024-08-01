@@ -3,4 +3,11 @@
   border: none;
   outline: none;
   font-size: 24px;
+  width: 543px;
+}
+
+@media screen and (max-width: 543px) {
+  .btn {
+    width: 94%;
+  }
 }

@@ -6,25 +6,28 @@
 
   .title {
     font-size: 32px;
-    color: 
-rgba(255, 70, 70, 1);
-font-weight: 
-700;
-margin-top: 14px;
-margin-left: 15px;
+    color:
+      rgba(255, 70, 70, 1);
+    font-weight:
+      700;
+    margin-top: 14px;
+    margin-left: 15px;
   }
+
   .desc {
     width: 543px;
     height: 38px;
     border-radius: 0px 0px 4px 4px;
     background-color: rgba(255, 70, 70, 0.4);
     cursor: pointer;
+
     .text {
       position: absolute;
       right: 32px;
       bottom: 10px;
       font-size: 16px;
       font-weight: 500;
+
       img {
         position: absolute;
         right: 12;
@@ -33,5 +36,18 @@ margin-left: 15px;
         height: 20px;
       }
     }
+  }
+}
+
+@media screen and (max-width: 543px) {
+  .dungeon {
+    width: 94%;
+
+    .desc {
+      width: 100%;
+    }
+
+    .complexityContainer {
+      margin-top: 133px;}
   }
 }

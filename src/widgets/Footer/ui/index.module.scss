@@ -1,6 +1,7 @@
 .hr {
   margin-top: 85px;
   border: 1px solid rgba(255, 70, 70, 1);
+  width: 543px;
 }
 .title {
   font-weight: 400;
@@ -16,5 +17,11 @@
   .part2 {
     color: rgba(217, 217, 217, 1);
     margin-left: 4px;
+  }
+}
+
+@media screen and (max-width: 543px) {
+  .hr {
+    width: 94%;
   }
 }
