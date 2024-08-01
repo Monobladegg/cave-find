@@ -18,7 +18,9 @@
   }
 
   .complexity {
+    position: absolute;
     margin-top: 7px;
+    right: 10px;
   }
 
   .flex {
@@ -51,18 +53,33 @@
 
 @media screen and (max-width: 543px) {
   .container {
-    margin-top: 41px;
-
+    margin-top: 0;
     .progressBar {
       width: 94%;
     }
 
+    .complexity {
+      margin-top: 3px;
+    }
+
+    .title {
+      text-align: center;
+      margin-right: 4%;
+      font-size: 26px;
+    }
+
+    
     .img {
       width: 94%;
     }
-
+    
     .flex {
       width: 94%;
+      padding-left: 5px;
+      padding-right: 8px;
+      .text {
+        font-size: 20px;
+      }
     }
 
   }
