@@ -4,11 +4,9 @@ import { Dungeon as DungeonType } from "@/shared/types";
 import DungeonComponent from "@/entities/Dungeon/ui";
 import axios from "axios";
 import { useEffect, useState } from "react";
-
 import s from "./index.module.scss";
 import { useShallow } from "zustand/react/shallow";
 import useStore from "@/features/store";
-
 import NotFoundIcon from "@/entities/notFoundIcon/ui";
 import Button from "@/entities/Button/ui";
 import { plusLimit } from "@/features/events";
