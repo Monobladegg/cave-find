@@ -9,4 +9,11 @@
   font-weight: 700;
   font-size: 32px;
   line-height: 38px;
+  width: 543px;
+}
+
+@media screen and (max-width: 543px) {
+  .h1 {
+    width: 94%;
+  }
 }
